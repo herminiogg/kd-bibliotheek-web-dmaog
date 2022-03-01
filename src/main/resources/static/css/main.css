@@ -1,0 +1,89 @@
+@font-face {
+    font-family:'Neue Haas Unica';
+    font-style:normal;
+    font-weight:300;
+    src:url(../fonts/NeueHaasUnica-Light.woff2) format("woff2"),
+        url(../fonts/NeueHaasUnica-Light.woff) format("woff")
+}
+    
+@font-face { 
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/NeueHaasUnica-Regular.woff2) format("woff2"),
+        url(../fonts/NeueHaasUnica-Regular.woff) format("woff")
+}
+
+@font-face{
+    font-family: 'Neue Haas Unica';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/NeueHaasUnica-Medium.woff2) format("woff2"),
+    url(../fonts/NeueHaasUnica-Medium.woff) format("woff")
+}
+
+@font-face {
+    font-family:'Neue Haas Unica';
+    font-style:normal;
+    font-weight:700;
+    src:url(../fonts/NeueHaasUnica-Bold.woff2) format("woff2"),
+        url(../fonts/NeueHaasUnica-Bold.woff) format("woff")
+}
+
+body {
+    font-family: "Neue Haas Unica", sans-serif !important;
+}
+
+#container {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    padding-top: 40px;
+}
+
+#logo img {
+    width: clamp(10rem,10vw,15rem);
+}
+
+#languages {
+    padding-top: 50px;
+}
+
+#languages a {
+    text-decoration: none;
+    color: black;
+}
+
+#pageTitle {
+    text-align: center;
+    padding-top: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer div {
+    font-size: .875rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}

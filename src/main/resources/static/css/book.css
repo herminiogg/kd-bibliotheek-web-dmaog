@@ -1,0 +1,34 @@
+#author {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 3rem;
+}
+
+#moreInformation {
+    display: flex;
+    justify-content: center;
+}
+
+#bookInformation, #libraryInformation {
+    width: 40%;
+}
+
+#bookInformation {
+    padding-right: 5%;
+}
+
+#libraryInformation {
+    padding-left: 5%;
+}
+
+#moreInformation span {
+    word-wrap: break-word;
+}
+
+.label {
+    font-weight: bold;
+}

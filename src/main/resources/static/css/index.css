@@ -1,0 +1,23 @@
+#pageTitle {
+    margin-bottom: 3rem;
+}
+
+#description {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+#description p {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#buttons a {
+    margin: 5px;
+}

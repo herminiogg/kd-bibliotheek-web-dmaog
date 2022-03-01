@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="tablefilter/style/tablefilter.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script th:inline="text" type="application/javascript">
+        function getLocale() {
+            return "[[${#locale}]]";
+        }
+        var tableRowsTitle = "[[#{table_rows_title}]]";
+        var tableRecordsTitle = "[[#{table_records_title}]]";
+        var tableNextPageText = "[[#{table_next_page_text}]]";
+        var tablePreviousPageText = "[[#{table_previous_page_text}]]";
+        var tableLastPageText = "[[#{table_last_page_text}]]";
+        var tableFirstPageText = "[[#{table_first_page_text}]]";
+        var tablePageText = "[[#{table_page_text}]]";
+        var tableOfText = "[[#{table_of_text}]]";
+        var tableNoFilterText = "[[#{table_no_filter_text}]]";
+        var tableClearFiltersText = "[[#{table_clear_filters_text}]]";
+    </script>
+    <script src="tablefilter/tablefilter.js" type="application/javascript"></script>
+    <script src="js/books.js" type="application/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/books.css">
+    <title>Books Bibliotheek Kazerne Dossin</title>
+</head>
+<body>
+    <div id="container">
+        <header th:replace="fragments/header" />
+        <div id="pageTitle">
+            <h1 th:text="#{title_h1}"></span></h1>
+        </div>
+        <div id="loading">
+            <span th:text="#{loading}"></span>
+        </div>
+        <div id="tableContainer" style="display: none;">
+            <table class="table" id="booksTable">
+                <thead>
+                    <tr>
+                        <th th:text="#{table_header_id}">ID</th>
+                        <th th:text="#{table_header_title}">Title</th>
+                        <th th:text="#{table_header_author}">Author</th>
+                        <th th:text="#{table_header_book_editorial}">Book Editorial</th>
+                        <th th:text="#{table_header_language}">Language</th>
+                        <th th:text="#{table_header_keywords}">Keywords</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="book: ${books}" vocab="https://schema.org" typeof="Book">
+                        <td th:text="${book.id.localName}" />
+                        <td><a property="title" th:href="@{/books/} + ${book.id.localName}" th:text="${book.dcTitle}"></a></td>
+                        <td property="author" th:text="${book.dcCreator}" />
+                        <td th:text="${book.dcPublisher}" />
+                        <td property="inLanguage" th:text="${book.dcLanguage.localName}" />
+                        <td property="keywords" th:text="${book.dcSubject}" />
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer th:replace="fragments/footer" />
+    </div>
+</body>
+</html>
