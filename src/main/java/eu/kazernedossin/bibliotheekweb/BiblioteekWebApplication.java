@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(maxAge = 3600)
 @Controller
 public class BiblioteekWebApplication {
 
@@ -48,9 +49,10 @@ public class BiblioteekWebApplication {
 		return "sparql";
 	}
 
+	@CrossOrigin("*")
 	@PostMapping(value = "/sparql")
 	public String postSparql() {
-		return "redirect:http:///localhost:3000/sparql";
+		return "redirect:http://bibliotheek.kazernedossin.eu:3000/sparql";
 	}
 
 	@Scheduled(fixedRate = 5 * 60 * 1000)

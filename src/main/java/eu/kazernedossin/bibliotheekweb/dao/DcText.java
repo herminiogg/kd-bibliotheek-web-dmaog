@@ -6,7 +6,7 @@ import java.util.List;
 public class DcText {
 
     public final static String rdfType = "http://purl.org/dc/elements/1.1/Text";
-    public final static String subjectPrefix = "http://example.com/";
+    public final static String subjectPrefix = "http://bibliotheek.kazernedossin.eu/books/";
 
     private IRIValue dcLanguage;
     private String lent;
