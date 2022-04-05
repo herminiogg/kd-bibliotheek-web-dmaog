@@ -2,11 +2,12 @@ PREFIX : <http://example.com/>
 PREFIX schema: <http://schema.org/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX kdbib: <http://bibliotheek.kazernedossin.eu/books/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SOURCE books_db <jdbc:ucanaccess://BIBLIOTHEEK_versie2021.mdb;memory=false>
+SOURCE books_db <jdbc:ucanaccess://C:\Users\Herminio\Downloads\BIBLIOTHEEK_versie2021.mdb;memory=false>
 
 ITERATOR books <sql: SELECT * FROM Boeken;> {
-    FIELD id <Boek-ID>
+    FIELD id <ID>
     FIELD author <auteur>
     FIELD title <Functie>
     FIELD ISBN <ISBN>
@@ -29,7 +30,7 @@ MATCHER booleans <FALSE AS false & TRUE AS true>
 
 EXPRESSION book <books_db.books>
 
-schema:Book :[book.id] {
+schema:Book kdbib:[book.id] {
     a dc:Text ;
     dc:title [book.title] ;
     dc:creator [book.author] ;
