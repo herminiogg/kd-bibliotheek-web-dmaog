@@ -87,7 +87,7 @@
 		<dependency>
 			<groupId>com.herminiogarcia</groupId>
 			<artifactId>dmaog_2.12</artifactId>
-			<version>0.1</version>
+			<version>0.1.1</version>
 			<exclusions>
 				<exclusion>
 					<groupId>be.ugent.rml</groupId>
