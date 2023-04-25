@@ -87,3 +87,24 @@ footer a {
     text-decoration: none;
     color: black;
 }
+
+#cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 !important
+    z-index: 999;
+    background: white;
+    text-align: center;
+    box-shadow: 1px 1px 5px black;
+    display: none;
+}
+
+#cookieBanner button {
+    margin-bottom: 1em;
+}
+
+#cookieBanner h3 {
+    margin-top: 0.5em;
+}

@@ -84,15 +84,15 @@ public class BiblioteekWebApplication {
 	}
 
 	// SPARQL endpoint
-	@GetMapping(value = "/sparql")
+	@GetMapping(value = "/query")
 	public String sparql() {
 		return "sparql";
 	}
 
 	@CrossOrigin("*")
-	@PostMapping(value = "/sparql")
+	@PostMapping(value = "/query")
 	public String postSparql() {
-		return "redirect:http://bibliotheek.kazernedossin.eu:3000/sparql";
+		return "redirect:http://bibliotheek.kazernedossin.eu/sparql";
 	}
 
 	@Scheduled(fixedRate = 5 * 60 * 1000)
