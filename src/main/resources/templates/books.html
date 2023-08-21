@@ -60,6 +60,27 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table" id="booksTableResponsive">
+                <thead>
+                <tr>
+                    <th th:text="#{books_responsive_table_label}">Books</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td>
+                        <a th:href="@{/books/} + ${book.id.localName}">
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_id}">ID</span>: </span><span th:text="${book.id.localName}" /><br />
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_title}">Title</span>: </span><span th:text="${book.dcTitle}" /><br />
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_author}">Author</span>: </span><span th:text="${book.dcCreator}" /><br />
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_book_editorial}">Book Editorial</span>: </span><span th:text="${book.dcPublisher}" /><br />
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_language}">Language</span>: </span><span th:text="${book.dcLanguage.localName}" /><br />
+                            <span class="responsiveTableHeader"><span th:text="#{table_header_keywords}">Keywords</span>: </span><span th:text="${book.dcSubject}" />
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <footer th:replace="fragments/footer" />
     </div>

@@ -95,7 +95,7 @@ public class BiblioteekWebApplication {
 		return "redirect:http://bibliotheek.kazernedossin.eu/sparql";
 	}
 
-	@Scheduled(fixedRate = 5 * 60 * 1000)
+	@Scheduled(fixedRate = 7 * 24 * 60 * 60 * 1000)
 	public void removeCache() {
 		Cache cache = cacheManager.getCache("books");
 		if(cache != null) {

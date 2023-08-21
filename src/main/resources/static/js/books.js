@@ -41,6 +41,28 @@ var filtersConfig = {
         }]
     };
 
+
+var filtersConfigResponsive = {
+        base_path: 'tablefilter/',
+        state: {
+          types: ['local_storage'],
+          filters: true,
+          sort: true
+        },
+        locale: locale,
+        alternate_rows: true,
+        loader: true,
+        col_types: [
+            'text'
+        ],
+        extensions:[{
+            name: 'sort'
+        }],
+        themes: [{
+            name: 'transparent'
+        }]
+    };
+
 window.onload = function () {
     var loadingDiv = document.querySelector("#loading");
     var container = document.querySelector("#tableContainer");
@@ -48,13 +70,19 @@ window.onload = function () {
     container.style.display = "none";
 
     var tf = new TableFilter(document.querySelector('#booksTable'), filtersConfig);
+    var tfr = new TableFilter(document.querySelector('#booksTableResponsive'), filtersConfigResponsive);
 
     container.style.display = "none";
 
-    tf.emitter.on(['initialized'], function() {
+    tfr.emitter.on(['initialized'], function() {
         loadingDiv.style.display = "none";
         container.style.display = "block";
     });
 
+    tf.emitter.on(['initialized'], function() {
+        tfr.init();
+    });
+
     tf.init();
+
 }

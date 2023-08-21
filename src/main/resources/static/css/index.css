@@ -20,3 +20,11 @@
 #buttons a {
     margin: 5px;
 }
+
+@media (max-width: 768px) {
+    #description>*  {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
