@@ -5,3 +5,36 @@
 .table {
     caption-side: top !important;
 }
+
+table td {
+    word-break: break-word;
+}
+
+.responsiveTableHeader {
+    font-weight: bold;
+}
+
+#booksTableResponsive tbody tr td a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    display: block;
+}
+
+#booksTableResponsive {
+    display: none;
+}
+
+.odd {
+    background-color: #f2f2f2 !important;
+}
+
+@media (max-width: 768px) {
+    #booksTableResponsive {
+        display: block;
+    }
+
+    #booksTable {
+        display: none;
+    }
+}

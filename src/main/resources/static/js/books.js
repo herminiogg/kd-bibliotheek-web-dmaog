@@ -27,11 +27,34 @@ var filtersConfig = {
         rows_counter: {text: tableRowsTitle},
         loader: true,
         col_4: 'select',
+        col_5: 'select',
         clear_filter_text: tableNoFilterText,
         col_types: [
             'number', 'string', 'string',
             'string', 'string', 'string',
             'string'
+        ],
+        extensions:[{
+            name: 'sort'
+        }],
+        themes: [{
+            name: 'transparent'
+        }]
+    };
+
+
+var filtersConfigResponsive = {
+        base_path: 'tablefilter/',
+        state: {
+          types: ['local_storage'],
+          filters: true,
+          sort: true
+        },
+        locale: locale,
+        alternate_rows: true,
+        loader: true,
+        col_types: [
+            'text'
         ],
         extensions:[{
             name: 'sort'
@@ -48,13 +71,19 @@ window.onload = function () {
     container.style.display = "none";
 
     var tf = new TableFilter(document.querySelector('#booksTable'), filtersConfig);
+    var tfr = new TableFilter(document.querySelector('#booksTableResponsive'), filtersConfigResponsive);
 
     container.style.display = "none";
 
-    tf.emitter.on(['initialized'], function() {
+    tfr.emitter.on(['initialized'], function() {
         loadingDiv.style.display = "none";
         container.style.display = "block";
     });
 
+    tf.emitter.on(['initialized'], function() {
+        tfr.init();
+    });
+
     tf.init();
+
 }

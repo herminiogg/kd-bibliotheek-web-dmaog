@@ -32,3 +32,18 @@ h2 {
 .label {
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    #bookInformation, #libraryInformation {
+        width: 100%;
+        padding: 0;
+    }
+
+    #libraryInformation {
+        padding-top: 10%;
+    }
+
+    #moreInformation {
+        flex-direction: column;
+    }
+}
