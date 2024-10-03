@@ -10,13 +10,26 @@
 	</parent>
 	<groupId>eu.kazernedossin</groupId>
 	<artifactId>bibliotheek-web-dmaog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 	<name>bibliotheek-web-dmaog</name>
-	<description>Webpage for the Kazerne Dossin&apos;s Biblioteek</description>
+	<description>Webpage for the Kazerne Dossin&apos;s library</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<developers>
+		<developer>
+			<id>herminiogg</id>
+			<name>Herminio García González</name>
+			<email>herminio.garciagonzalez@kazernedossin.eu</email>
+			<url>https://herminiogarcia.com/</url>
+			<organization>Kazerne Dossin</organization>
+			<organizationUrl>https://kazernedossin.eu/</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
 	<dependencies>
 		<dependency>
 			<groupId>be.ugent.rml</groupId>
@@ -87,7 +100,7 @@
 		<dependency>
 			<groupId>com.herminiogarcia</groupId>
 			<artifactId>dmaog_3</artifactId>
-			<version>0.1.4</version>
+			<version>0.1.5</version>
 			<exclusions>
 				<exclusion>
 					<groupId>be.ugent.rml</groupId>

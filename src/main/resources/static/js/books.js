@@ -27,6 +27,7 @@ var filtersConfig = {
         rows_counter: {text: tableRowsTitle},
         loader: true,
         col_4: 'select',
+        col_5: 'select',
         clear_filter_text: tableNoFilterText,
         col_types: [
             'number', 'string', 'string',

@@ -29,9 +29,9 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><span class="label" th:text="#{details_book_editorial_field}"></span><span th:text="${book.dcPublisher}"></span></li>
                             <li class="list-group-item"><span class="label" th:text="#{details_book_editorial_place_field}"></span><span th:text="${book.schemaLocationCreated}"></span></li>
-                            <li class="list-group-item"><span class="label" th:text="#{details_edition_date_field}"></span><span th:text="${book.dcCreated.localName}"></span></li>
+                            <li class="list-group-item"><span class="label" th:text="#{details_edition_date_field}"></span><span th:text="${book.dcCreated.localName != 'null'} ? ${book.dcCreated.localName} : ''"></span></li>
                             <li class="list-group-item"><span class="label" th:text="#{details_number_pages_field}"></span><span property="numberOfPages" th:text="${book.dcSizeOrDuration}"></span></li>
-                            <li class="list-group-item"><span class="label" th:text="#{details_language_field}"></span><span th:text="${book.dcLanguage.localName}"></span></li>
+                            <li class="list-group-item"><span class="label" th:text="#{details_language_field}"></span><span th:text="${book.dcLanguage.localName != 'null'} ? ${book.dcLanguage.localName} : ''"></span></li>
                             <li class="list-group-item"><span class="label" th:text="#{details_isbn_field}"></span><span property="isbn" th:text="${book.dcIdentifier}"></span></li>
                         </ul>
                     </div>
